@@ -1,5 +1,4 @@
 import express, { Express, json, urlencoded, static as static_ } from 'express'
-import { pgClient } from './config/config.database'
 import { PORT } from './uhuuy.json'
 import { indexRouter } from './routes/routes.index'
 import { morganNotes } from './config/config.morgan'
@@ -10,8 +9,6 @@ import corsHandler from './config/config.cors'
 import path from 'path'
 
 const app: Express = express()
-
-pgClient.connect()
 
 app.set('trust proxy', true)
 app.set('view engine', 'ejs')
