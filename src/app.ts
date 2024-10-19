@@ -1,5 +1,4 @@
 import express, { Express, json, urlencoded, static as static_ } from 'express'
-import { PORT } from './uhuuy.json'
 import { indexRouter } from './routes/routes.index'
 import { morganNotes } from './config/config.morgan'
 import { errorHandler } from './exception/exception.global'
@@ -27,5 +26,5 @@ app.use(compressionHandler())
 app.use(indexRouter())
 app.use(errorHandler())
 
-app.set('port', PORT)
+app.set('port', 8080)
 app.listen(app.get('port'))
